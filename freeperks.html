@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore gift card, gaming voucher, movie voucher and special offer opportunities. Check each offer's eligibility and terms before participating.">
+<title>FreePerks — Gift Cards & Vouchers</title>
+<style>
+:root {
+  --site-primary: #5B3DF5;
+  --site-on-primary: #FFFFFF;
+  --site-secondary: #14B8A6;
+  --site-on-secondary: #062F2B;
+  --site-background: #F7F7FC;
+  --site-on-background: #18182B;
+  --site-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --site-font-heading: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+  --site-decoration-opacity: 1;
+  --surface: #FFFFFF;
+  --muted: #66677F;
+  --border: #E8E7F2;
+  --shadow: 0 14px 38px rgba(39, 31, 90, .09);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--site-font-body); background: light-dark(var(--site-background), #12121D); color: light-dark(var(--site-on-background), #F4F3FF); }
+#app { min-height: 100vh; width: 100%; background-color: var(--site-background); color: var(--site-on-background); border-radius: 0; overflow: hidden; position: relative; }
+a { color: inherit; }
+.container { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+.topline { background: var(--site-on-background); color: #fff; text-align: center; padding: 9px 12px; font-size: 12px; letter-spacing: .04em; }
+header { position: relative; z-index: 2; border-bottom: 1px solid var(--border); background: var(--surface); }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 76px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: -.04em; font-size: 22px; text-decoration: none; }
+.brand-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 14px; background: var(--site-primary); color: white; font-size: 22px; }
+.navlinks { display: flex; align-items: center; gap: 22px; font-size: 14px; font-weight: 650; color: var(--muted); }
+.navlinks a { text-decoration: none; }
+.navlinks a:hover { color: var(--site-primary); }
+.nav-cta, .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; text-decoration: none; cursor: pointer; font-weight: 800; border-radius: calc(14px * var(--site-radius-scale)); transition: transform .18s ease, opacity .18s ease; }
+.nav-cta { padding: 12px 17px; background: var(--site-primary); color: white; font-size: 13px; }
+.btn:hover, .nav-cta:hover { transform: translateY(-2px); }
+.hero { position: relative; padding: 68px 0 52px; overflow: hidden; background: linear-gradient(125deg, #F0EDFF 0%, #F8F7FF 55%, #E3FBF6 100%); }
+.hero:before, .hero:after { content: ""; position: absolute; border-radius: 999px; filter: blur(1px); opacity: calc(.45 * var(--site-decoration-opacity)); pointer-events: none; }
+.hero:before { width: 270px; height: 270px; background: #D7CEFF; right: -65px; top: -95px; }
+.hero:after { width: 170px; height: 170px; background: #B7F2E8; left: -70px; bottom: -80px; }
+.hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 40px; position: relative; z-index: 1; }
+.eyebrow { display: inline-flex; align-items: center; gap: 7px; background: #FFFFFFC9; border: 1px solid #E1DCF9; color: #5137D6; padding: 8px 12px; border-radius: 999px; font-size: 12px; font-weight: 850; }
+h1 { font-family: var(--site-font-heading); font-size: calc(52px * var(--site-heading-scale)); letter-spacing: -.055em; line-height: 1.04; margin: 18px 0; max-width: 650px; }
+.gradient-text { color: var(--site-primary); }
+.hero p { max-width: 590px; color: #5E5D78; font-size: 17px; line-height: 1.7; margin: 0 0 25px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary { padding: 15px 20px; background: var(--site-primary); color: white; box-shadow: 0 9px 20px #5B3DF52B; }
+.btn-light { padding: 14px 19px; background: white; color: #282344; border: 1px solid #E5E1F5; }
+.hero-note { margin-top: 15px; font-size: 12px; color: #6E6A89; }
+.gift-art { min-height: 310px; display: grid; place-items: center; position: relative; }
+.gift-orb { width: 250px; height: 250px; border-radius: 40% 60% 55% 45%; transform: rotate(-8deg); background: linear-gradient(140deg, #6C4BFF, #9D8AFF); display: grid; place-items: center; box-shadow: 0 30px 70px #5B3DF53D; position: relative; }
+.gift-box { width: 142px; height: 120px; background: #FFE58C; border-radius: 13px; position: relative; box-shadow: 0 16px 25px #35208B2A; transform: rotate(8deg); }
+.gift-box:before { content: ""; position: absolute; width: 27px; height: 120px; background: #FF7C9B; left: 57px; top: 0; }
+.gift-box:after { content: ""; position: absolute; width: 142px; height: 23px; background: #FFC94E; top: 17px; left: 0; }
+.bow { position: absolute; width: 48px; height: 32px; top: -20px; left: 48px; border: 13px solid #FF7C9B; border-radius: 50% 50% 20% 50%; transform: rotate(-20deg); z-index: 2; }
+.float-tag { position: absolute; background: white; border: 1px solid #EEEAFB; padding: 11px 14px; border-radius: 15px; box-shadow: var(--shadow); font-size: 13px; font-weight: 850; color: #32275D; }
+.float-tag.one { top: 22px; right: -3px; transform: rotate(5deg); }
+.float-tag.two { bottom: 23px; left: 0; transform: rotate(-5deg); }
+.stats { background: white; border-bottom: 1px solid var(--border); }
+.stats-row { display: grid; grid-template-columns: repeat(3, 1fr); padding: 20px 0; }
+.stat { text-align: center; padding: 5px 15px; border-right: 1px solid var(--border); }
+.stat:last-child { border-right: 0; }
+.stat strong { display: block; font-size: 15px; }
+.stat span { display: block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+main { padding: 56px 0 70px; }
+.section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 24px; }
+.kicker { color: var(--site-primary); text-transform: uppercase; letter-spacing: .12em; font-weight: 900; font-size: 11px; }
+h2 { font-size: calc(32px * var(--site-heading-scale)); letter-spacing: -.045em; margin: 8px 0 0; }
+.section-desc { color: var(--muted); line-height: 1.65; margin: 8px 0 0; max-width: 650px; font-size: 14px; }
+.search { display: flex; align-items: center; gap: 9px; border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; background: white; min-width: 240px; }
+.search input { width: 100%; border: 0; outline: none; font: inherit; color: #22213A; background: transparent; }
+.filters { display: flex; flex-wrap: wrap; gap: 9px; margin: 25px 0; }
+.filter { padding: 10px 14px; border: 1px solid var(--border); border-radius: 999px; color: #5D5B75; background: white; font-weight: 750; font-size: 12px; cursor: pointer; }
+.filter.active { background: var(--site-primary); border-color: var(--site-primary); color: white; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 19px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: calc(22px * var(--site-radius-scale)); overflow: hidden; box-shadow: 0 6px 20px #26205208; display: flex; flex-direction: column; min-width: 0; }
+.card-art { height: 145px; display: grid; place-items: center; position: relative; overflow: hidden; }
+.card-art:before { content: ""; width: 155px; height: 155px; position: absolute; border: 1px solid #FFFFFF70; border-radius: 50%; }
+.card-art:after { content: ""; width: 195px; height: 195px; position: absolute; border: 1px solid #FFFFFF50; border-radius: 50%; }
+.art-gift { background: linear-gradient(135deg, #FCE5A6, #F6B65B); }
+.art-game { background: linear-gradient(135deg, #C6F7E9, #58CDB4); }
+.art-movie { background: linear-gradient(135deg, #D8D2FF, #9D8AFF); }
+.art-shop { background: linear-gradient(135deg, #FFD5E2, #FF91B4); }
+.art-stream { background: linear-gradient(135deg, #CBE4FF, #78B4FF); }
+.art-bonus { background: linear-gradient(135deg, #FFE6CB, #FFB37A); }
+.art-emoji { font-size: 62px; position: relative; z-index: 1; filter: drop-shadow(0 10px 8px #1D17431B); }
+.badge-label { position: absolute; top: 13px; left: 13px; background: #FFFFFFE8; color: #30264D; padding: 6px 9px; border-radius: 999px; font-size: 10px; font-weight: 900; z-index: 1; }
+.card-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+.card-top { display: flex; justify-content: space-between; gap: 10px; align-items: start; }
+.card h3 { font-size: 17px; margin: 0; letter-spacing: -.025em; }
+.card-category { color: var(--site-primary); font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 7px; }
+.card p { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 11px 0 16px; }
+.card-foot { margin-top: auto; }
+.card .btn { width: 100%; padding: 13px 12px; font-size: 13px; }
+.card .btn-primary { box-shadow: none; }
+.terms { margin-top: 12px; color: #77758A; font-size: 10px; line-height: 1.5; }
+.empty { display: none; text-align: center; color: var(--muted); padding: 35px; grid-column: 1/-1; background: white; border-radius: 18px; border: 1px dashed var(--border); }
+.how { margin-top: 68px; background: #EEEAFE; border-radius: 28px; padding: 34px; display: grid; grid-template-columns: .85fr 1.15fr; gap: 30px; align-items: center; }
+.how h2 { margin-bottom: 10px; }
+.how p { color: #64617D; font-size: 14px; line-height: 1.7; margin: 0; }
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.step { background: #FFFFFFC9; border: 1px solid #DDD6FF; border-radius: 17px; padding: 17px 14px; }
+.step-num { width: 29px; height: 29px; display: grid; place-items: center; background: var(--site-primary); color: white; border-radius: 10px; font-size: 12px; font-weight: 900; }
+.step strong { display: block; font-size: 13px; margin: 12px 0 6px; }
+.step span { display: block; font-size: 11px; color: #6D6988; line-height: 1.5; }
+.disclosure { margin-top: 24px; padding: 16px 18px; border-radius: 14px; background: #FFFAE8; border: 1px solid #F3E4A9; color: #665326; font-size: 12px; line-height: 1.7; }
+footer { background: #19172E; color: white; padding: 35px 0; }
+.footer-row { display: flex; align-items: start; justify-content: space-between; gap: 25px; }
+footer p { color: #BDBBD0; font-size: 12px; line-height: 1.7; max-width: 520px; }
+.footer-links { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: #D4D2E3; }
+.footer-links a { text-decoration: none; }
+.copyright { color: #9895B2; font-size: 11px; margin-top: 20px; padding-top: 18px; border-top: 1px solid #34314F; }
+@media (prefers-color-scheme: dark) { :root { --surface: #1C1B2B; --muted: #B7B5CB; --border: #343249; --site-background: #12121D; --site-on-background: #F4F3FF; } .hero { background: linear-gradient(125deg, #262044, #211E35 55%, #17312F); } .hero p, .hero-note { color: #C1BED9; } .stats, .search, .filter, .empty { background: #1C1B2B; } .stat strong, .search input { color: #F4F3FF; } .how { background: #25213D; } .how p, .step span { color: #C4C0DE; } .step { background: #302A4A; border-color: #4B426C; } .disclosure { background: #332E20; color: #F5E7B4; border-color: #5B4E2A; } .float-tag { color: #32275D; } }
+@media (max-width: 850px) { .hero-grid { grid-template-columns: 1fr; gap: 15px; } .hero { padding: 48px 0 28px; } .gift-art { min-height: 250px; } .gift-orb { width: 205px; height: 205px; } h1 { font-size: calc(43px * var(--site-heading-scale)); } .cards { grid-template-columns: repeat(2, minmax(0,1fr)); } .how { grid-template-columns: 1fr; } .navlinks { gap: 12px; } }
+@media (max-width: 560px) { .container { width: min(100% - 26px, 1120px); } .nav { min-height: 66px; } .brand { font-size: 19px; } .brand-mark { width: 36px; height: 36px; } .navlinks a:not(.nav-cta) { display: none; } .nav-cta { padding: 10px 12px; font-size: 12px; } h1 { font-size: calc(39px * var(--site-heading-scale)); } .hero p { font-size: 15px; } .gift-art { min-height: 225px; } .gift-orb { width: 185px; height: 185px; } .gift-box { transform: scale(.85) rotate(8deg); } .float-tag.one { right: 0; } .stats-row { padding: 15px 0; } .stat { padding: 5px 7px; } .stat strong { font-size: 12px; } .stat span { font-size: 10px; } main { padding: 42px 0 48px; } .section-head { align-items: stretch; flex-direction: column; } .search { min-width: 0; } .cards { grid-template-columns: 1fr; } .card-art { height: 155px; } .how { padding: 23px; margin-top: 48px; } .steps { grid-template-columns: 1fr; } .step { display: grid; grid-template-columns: 32px 1fr; column-gap: 10px; align-items: center; } .step strong { margin: 0 0 3px; } .step span { grid-column: 2; } .footer-row { flex-direction: column; } }
+</style>
+</head>
+<body>
+<div id="app" data-sites-preview-theme="custom">
+  <div class="topline"><a class="smartlink-nav" href="https://auctionr.org/4/bdfae8475743e9c90f42033333ad902f" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;display:block">✨ DISCOVER REWARD OPPORTUNITIES · CHECK OFFER TERMS BEFORE YOU JOIN</a></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="FreePerks home"><span class="brand-mark">🎁</span><span>Free<span style="color:var(--site-primary)">Perks</span></span></a>
+      <nav class="navlinks" aria-label="Main navigation"><a class="smartlink-nav" href="https://auctionr.org/4/bdfae8475743e9c90f42033333ad902f" target="_blank" rel="noopener noreferrer">Browse offers</a><a class="smartlink-nav" href="https://auctionr.org/4/bdfae8475743e9c90f42033333ad902f" target="_blank" rel="noopener noreferrer">How it works</a><a class="nav-cta smartlink-nav" href="https://auctionr.org/4/bdfae8475743e9c90f42033333ad902f" target="_blank" rel="noopener noreferrer">Explore offers <span aria-hidden="true">↗</span></a></nav>
+    </div>
+  </header>
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">🎉 YOUR NEXT PERK STARTS HERE</span>
+        <h1>Find your next <span class="gradient-text">gift card</span> or voucher.</h1>
+        <p>Explore gift card ideas, gaming rewards, movie vouchers and featured promotions in one place. Browse the options, read the details, and choose what fits you.</p>
+        <div class="hero-actions"><a class="btn btn-primary smartlink-nav" href="https://auctionr.org/4/bdfae8475743e9c90f42033333ad902f" target="_blank" rel="noopener noreferrer">Browse all offers <span aria-hidden="true">→</span></a><a class="btn btn-light smartlink-nav" href="https://auctionr.org/4/bdfae8475743e9c90f42033333ad902f" target="_blank" rel="noopener noreferrer">How it works</a></div>
+        <div class="hero-note">Offers, availability, eligibility and redemption rules vary by provider.</div>
+      </div>
+      <div class="gift-art" aria-label="Illustration of a gift box">
+        <div class="gift-orb"><div class="gift-box"><div class="bow"></div></div></div>
+        <div class="float-tag one">🎮 Game rewards</div><div class="float-tag two">🎬 Movie nights</div>
+      </div>
+    </div>
+  </section>
+  <section class="stats"><div class="container stats-row"><div class="stat"><strong>🎁 Gift card ideas</strong><span>Browse popular categories</span></div><div class="stat"><strong>🎮 Gaming perks</strong><span>Explore game-related offers</span></div><div class="stat"><strong>🍿 Movie vouchers</strong><span>Look for cinema promotions</span></div></div></section>
+  <main>
+    <div class="container" id="offers">
+      <div class="section-head"><div><div class="kicker">Curated for you</div><h2>Explore featured offers</h2><p class="section-desc">Choose a category or search the offer cards. Review each provider's details before sharing information or participating.</p></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search offers..." aria-label="Search offers"></label></div>
+      <div class="filters" role="group" aria-label="Filter offers"><button class="filter active" data-filter="all">All offers</button><button class="filter" data-filter="adult">18+ Adult</button><button class="filter" data-filter="gift">Gift cards</button><button class="filter" data-filter="gaming">Gaming</button><button class="filter" data-filter="movies">Movie vouchers</button><button class="filter" data-filter="tools">Free tools & traffic</button><button class="filter" data-filter="redeem">Redeem codes</button><button class="filter" data-filter="special">Special offers</button></div>
+      <div class="cards" id="cards">
+        <article class="card" data-category="adult" data-search="18+ adult video sites mature entertainment age restricted"><div class="card-art art-movie"><span class="badge-label">18+ · AGE RESTRICTED</span><div class="art-emoji">🔞</div></div><div class="card-body"><div class="card-top"><div><div class="card-category">Adults only · 18+</div><h3>Adult Video Sites</h3></div></div><p>Explore age-restricted adult entertainment platforms. Only continue if you are legally old enough in your location.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Adult Video Sites">Explore 18+ sites ↗</a><div class="terms">External destinations may contain explicit material. Follow local laws and each site's age and safety rules.</div></div></div></article>
+        <article class="card" data-category="adult" data-search="18+ adult pictures mature photo galleries age restricted"><div class="card-art art-shop"><span class="badge-label">18+ · AGE RESTRICTED</span><div class="art-emoji">🖼️</div></div><div class="card-body"><div class="card-top"><div><div class="card-category">Adults only · 18+</div><h3>Adult Picture Galleries</h3></div></div><p>Find adult-oriented photo gallery destinations intended for legally adult visitors only.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Adult Picture Galleries">Explore adult galleries ↗</a><div class="terms">Check privacy, consent and age rules. Avoid sites sharing intimate images without consent.</div></div></div></article>
+        <article class="card" data-category="adult" data-search="18+ adult viral songs mature music trending songs"><div class="card-art art-stream"><span class="badge-label">18+ · MUSIC</span><div class="art-emoji">🎵</div></div><div class="card-body"><div class="card-top"><div><div class="card-category">Mature music</div><h3>Adult Viral Songs</h3></div></div><p>Browse trending songs and mature-themed music through music or video platforms.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Adult Viral Songs">Browse viral songs ↗</a><div class="terms">Music availability, explicit-content labels and regional restrictions vary by platform.</div></div></div></article>
+        <article class="card" data-category="adult" data-search="18+ adult viral movies mature films age restricted"><div class="card-art art-bonus"><span class="badge-label">18+ · FILMS</span><div class="art-emoji">🎞️</div></div><div class="card-body"><div class="card-top"><div><div class="card-category">Adults only · 18+</div><h3>Adult & Viral Movies</h3></div></div><p>Discover mature-rated film and entertainment destinations with age ratings and content details.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Adult and Viral Movies">Explore mature films ↗</a><div class="terms">Confirm ratings, legal access and subscription costs before opening an external site.</div></div></div></article>
+        <article class="card" data-category="gift" data-search="gift card shopping rewards digital voucher"><div class="card-art art-gift"><span class="badge-label">GIFT CARDS</span><div class="art-emoji">🎁</div></div><div class="card-body"><div class="card-top"><div><div class="card-category">Shopping & lifestyle</div><h3>Gift Card Offers</h3></div></div><p>Explore gift card promotions and digital reward opportunities from participating providers.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Gift Card Offers">Explore gift cards ↗</a><div class="terms">Availability and eligibility depend on the provider. Not every offer is free.</div></div></div></article>
+        <article class="card" data-category="gaming" data-search="gaming game voucher points player rewards"><div class="card-art art-game"><span class="badge-label">GAMING</span><div class="art-emoji">🎮</div></div><div class="card-body"><div class="card-category">Games & digital perks</div><h3>Game Vouchers</h3><p>Find gaming-related promotions, voucher opportunities and digital reward offers.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Game Vouchers">Explore game offers ↗</a><div class="terms">Check supported regions, game platforms and redemption requirements.</div></div></div></article>
+        <article class="card" data-category="movies" data-search="movie cinema film tickets voucher popcorn"><div class="card-art art-movie"><span class="badge-label">MOVIE TIME</span><div class="art-emoji">🎬</div></div><div class="card-body"><div class="card-category">Entertainment</div><h3>Movie Vouchers</h3><p>Discover cinema promotions, movie-night deals and entertainment voucher ideas.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Movie Vouchers">Explore movie offers ↗</a><div class="terms">Cinema, location, booking dates and other conditions may apply.</div></div></div></article>
+        <article class="card" data-category="gift" data-search="store shopping fashion retail voucher discount"><div class="card-art art-shop"><span class="badge-label">SHOPPING</span><div class="art-emoji">🛍️</div></div><div class="card-body"><div class="card-category">Shopping finds</div><h3>Shopping Rewards</h3><p>Browse shopping-related rewards and discount opportunities for everyday finds.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Shopping Rewards">View shopping offers ↗</a><div class="terms">Read the terms, minimum spend and expiration date before redeeming.</div></div></div></article>
+        <article class="card" data-category="special" data-search="streaming entertainment subscription promotion offer"><div class="card-art art-stream"><span class="badge-label">ENTERTAINMENT</span><div class="art-emoji">🍿</div></div><div class="card-body"><div class="card-category">Watch & relax</div><h3>Entertainment Perks</h3><p>Explore featured entertainment promotions and possible subscription-related deals.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Entertainment Perks">View entertainment offers ↗</a><div class="terms">Free trials may renew as paid subscriptions. Review cancellation terms.</div></div></div></article>
+        <article class="card" data-category="special" data-search="featured bonus special seasonal promotions rewards"><div class="card-art art-bonus"><span class="badge-label">FEATURED</span><div class="art-emoji">✨</div></div><div class="card-body"><div class="card-category">Limited promotions</div><h3>Special Offers</h3><p>Check out featured promotions and reward opportunities that may change over time.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Special Offers">Explore special offers ↗</a><div class="terms">Promotions can expire or have participation requirements.</div></div></div></article>
+        <article class="card" data-category="gift" data-search="amazon discount card shopping coupon gift card deal"><div class="card-art art-shop"><span class="badge-label">SHOPPING DEALS</span><div class="art-emoji">🛒</div></div><div class="card-body"><div class="card-category">Shopping & discounts</div><h3>Amazon Discount Offers</h3><p>Look for eligible Amazon promotions, coupons and gift-card-related deals from participating providers.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Amazon Discount Offers">Claim offer ↗</a><div class="terms">Independent listing; not affiliated with Amazon. Discounts and eligibility vary. No gift card is guaranteed.</div></div></div></article>
+        <article class="card" data-category="tools" data-search="free traffic tools website visitors marketing seo analytics"><div class="card-art art-stream"><span class="badge-label">CREATOR TOOLS</span><div class="art-emoji">📈</div></div><div class="card-body"><div class="card-category">Website growth</div><h3>Free Traffic Tools</h3><p>Discover tools for SEO checks, analytics, content planning and learning how to attract genuine visitors.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Free Traffic Tools">Explore tools ↗</a><div class="terms">Free tiers and usage limits vary. Avoid bots, fake clicks and guaranteed-traffic claims.</div></div></div></article>
+        <article class="card" data-category="redeem" data-search="redeem codes promo code coupon code gaming shopping"><div class="card-art art-game"><span class="badge-label">CODE FINDER</span><div class="art-emoji">🎟️</div></div><div class="card-body"><div class="card-category">Promo codes</div><h3>Redeem Codes & Coupons</h3><p>Browse code-related promotions for games, shopping and digital services, where available.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Redeem Codes and Coupons">Find codes ↗</a><div class="terms">Codes can expire, be region-locked or have limited redemptions. Verify before use.</div></div></div></article>
+        <article class="card" data-category="gaming" data-search="game redeem code mobile game points gaming rewards"><div class="card-art art-bonus"><span class="badge-label">GAMER PICKS</span><div class="art-emoji">🕹️</div></div><div class="card-body"><div class="card-category">Gaming rewards</div><h3>Game Redeem Codes</h3><p>Find gaming reward announcements and code offers shared by participating game publishers.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Game Redeem Codes">Check game codes ↗</a><div class="terms">Use official publisher sources when possible. Never share your account password.</div></div></div></article>
+        <article class="card" data-category="special" data-search="free app tools productivity design writing online tools"><div class="card-art art-movie"><span class="badge-label">DIGITAL TOOLS</span><div class="art-emoji">🧰</div></div><div class="card-body"><div class="card-category">Apps & productivity</div><h3>Free Online Tools</h3><p>Explore free-to-start design, writing, productivity and file utility tools.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Free Online Tools">Explore free tools ↗</a><div class="terms">Some features may require signup, a trial or a paid upgrade. Read terms first.</div></div></div></article>
+        <article class="card" data-category="gift" data-search="digital gift cards retail restaurant food delivery coupon"><div class="card-art art-gift"><span class="badge-label">DIGITAL REWARDS</span><div class="art-emoji">💳</div></div><div class="card-body"><div class="card-category">Digital rewards</div><h3>Digital Gift Card Deals</h3><p>Browse gift-card promotions from retailers and services that publish current offers.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Digital Gift Card Deals">View gift card deals ↗</a><div class="terms">Check issuer, country restrictions, minimum spend and redemption rules.</div></div></div></article>
+        <article class="card" data-category="movies" data-search="streaming movie ticket cinema popcorn entertainment voucher"><div class="card-art art-movie"><span class="badge-label">WATCH & SAVE</span><div class="art-emoji">🍿</div></div><div class="card-body"><div class="card-category">Movies & streaming</div><h3>Movie & Streaming Deals</h3><p>Explore cinema ticket discounts, entertainment promotions and eligible streaming trials.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Movie and Streaming Deals">Claim deal ↗</a><div class="terms">Location, subscription renewal and cancellation terms may apply.</div></div></div></article>
+        <article class="card" data-category="special" data-search="learning courses education software free trial student tools"><div class="card-art art-stream"><span class="badge-label">LEARN MORE</span><div class="art-emoji">🎓</div></div><div class="card-body"><div class="card-category">Learning & software</div><h3>Learning & Software Offers</h3><p>Find free learning resources, software trials and educational promotions.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Learning and Software Offers">Browse offers ↗</a><div class="terms">Trials may convert to paid plans. Check the renewal date and cancellation process.</div></div></div></article>
+        <article class="card" data-category="special" data-search="giveaway contest seasonal bonus prize promotion"><div class="card-art art-bonus"><span class="badge-label">GIVEAWAYS</span><div class="art-emoji">🎉</div></div><div class="card-body"><div class="card-category">Seasonal promotions</div><h3>Giveaways & Bonus Offers</h3><p>Discover seasonal giveaways and promotional campaigns from identifiable organizers.</p><div class="card-foot"><a class="btn btn-primary offer-link" href="#offer-details" data-offer="Giveaways and Bonus Offers">See promotions ↗</a><div class="terms">Check official rules, eligibility, dates and whether any purchase is required.</div></div></div></article>
+        <div class="empty" id="empty">No matching offers. Try another search or category.</div>
+      </div>
+      <div class="disclosure" id="offer-details"><strong>Transparency & age notice:</strong> This page is an offer-discovery landing page, not a gift-card issuer. Some categories are marked 18+ and may lead to mature or explicit third-party content. Adults only; follow local laws and the destination site's age rules. We cannot guarantee that any offer is free, available, or valid in every country. Some links may be promotional and may generate revenue for the site owner. Check the destination, privacy policy and costs before participating. Never pay a fee or share sensitive information to claim an unexpected prize.</div>
+      <section class="how" id="how"><div><div class="kicker">Simple steps</div><h2>How to explore offers</h2><p>Take a moment to understand an offer before opening it. Genuine promotions explain who can join and what is required.</p></div><div class="steps"><div class="step"><div class="step-num">01</div><div><strong>Choose a category</strong><span>Find gift cards, games, movies or promotions.</span></div></div><div class="step"><div class="step-num">02</div><div><strong>Review details</strong><span>Check eligibility, region, fees and expiry.</span></div></div><div class="step"><div class="step-num">03</div><div><strong>Continue if suitable</strong><span>Use the offer page only if you trust the destination.</span></div></div></div></section>
+    </div>
+  </main>
+  <footer><div class="container"><div class="footer-row"><div><a class="brand" href="#top"><span class="brand-mark">🎁</span><span>Free<span style="color:#A89BFF">Perks</span></span></a><p>A simple directory for discovering gift card, gaming, movie and entertainment offer opportunities. Check all offer details with the provider.</p></div><div class="footer-links"><a href="#offers">Offers</a><a href="#how">How it works</a><a href="#offer-details">Disclosure</a></div></div><div class="copyright">© <span id="year"></span> FreePerks. Independent promotional directory; not affiliated with or endorsed by any brand shown by third-party offer providers.</div></div></footer>
+</div>
+<script>
+// Add your real Smartlink below. Leave blank until you are ready to connect it.
+const SMARTLINK_URL = "https://auctionr.org/4/bdfae8475743e9c90f42033333ad902f";
+const searchInput = document.getElementById('search');
+const filterButtons = [...document.querySelectorAll('.filter')];
+const cards = [...document.querySelectorAll('.card')];
+const empty = document.getElementById('empty');
+let activeFilter = 'all';
+function updateCards() {
+  const q = searchInput.value.trim().toLowerCase();
+  let visible = 0;
+  cards.forEach(card => {
+    const categoryMatch = activeFilter === 'all' || card.dataset.category === activeFilter;
+    const searchMatch = (card.dataset.search + ' ' + card.innerText).toLowerCase().includes(q);
+    const show = categoryMatch && searchMatch;
+    card.style.display = show ? 'flex' : 'none';
+    if (show) visible++;
+  });
+  empty.style.display = visible ? 'none' : 'block';
+}
+searchInput.addEventListener('input', updateCards);
+filterButtons.forEach(button => button.addEventListener('click', () => {
+  activeFilter = button.dataset.filter;
+  filterButtons.forEach(item => item.classList.toggle('active', item === button));
+  updateCards();
+}));
+document.querySelectorAll('.offer-link').forEach(link => link.addEventListener('click', event => {
+  if (!SMARTLINK_URL || !/^https?:\/\//i.test(SMARTLINK_URL)) {
+    event.preventDefault();
+    document.getElementById('offer-details').scrollIntoView({behavior:'smooth', block:'center'});
+    alert('Smartlink not connected yet. Add your real Adsterra Smartlink in the SMARTLINK_URL setting in this file.');
+    return;
+  }
+  event.preventDefault();
+  window.open(SMARTLINK_URL, '_blank', 'noopener,noreferrer');
+}));
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
